@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const posts = await getCollection('blog');
+---
+
+<BlogLayout title="Blog">
+  <h1 class="text-3xl font-semibold mb-2">Writing</h1>
+  <p class="text-zinc-400 mb-10">
+    Occasional thoughts on engineering, systems, and building things.
+  </p>
+
+  <ul class="space-y-8">
+    {posts.map(post => (
+      <li>
+        <a
+          href={`/blog/${post.slug}`}
+          class="block group"
+        >
+          <h2 class="text-xl font-medium text-zinc-100 group-hover:text-indigo-400 transition">
+            {post.data.title}
+          </h2>
+          <p class="mt-1 text-sm text-zinc-400">
+            {post.data.description}
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BlogLayout>

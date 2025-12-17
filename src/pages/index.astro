@@ -1,16 +1,98 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import profileImage from '../assets/profile.png';
+import { Image } from 'astro:assets';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Jacob Monck">
+  <section class="max-w-3xl mx-auto text-center">
+
+    <div class="mb-10 flex justify-center">
+      <div
+        class="
+          h-36 w-36
+          rounded-full
+          overflow-hidden
+          shadow-xl
+          ring-1 ring-zinc-800
+          bg-zinc-950
+          [mask-image:radial-gradient(circle,black_60%,transparent_100%)]
+        "
+      >
+        <Image
+          src={profileImage}
+          alt="Photo of Jacob Monck"
+          class="h-full w-full object-cover grayscale transition duration-300 hover:grayscale-0"
+          loading="eager"
+          width={144}
+          height={144}
+        />
+      </div>
+    </div>
+
+    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight">
+      Building thoughtful
+      <span
+        class="bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-500 bg-[length:300%_300%] bg-clip-text text-transparent animate-[rainbow_6s_linear_infinite]"
+      >
+        software.
+      </span>
+    </h1>
+
+    <p class="mt-6 text-lg text-zinc-300 leading-relaxed">
+      I focus on backend systems, APIs, and tooling, with an emphasis on correctness, performance, and maintainability.
+    </p>
+
+    <section class="mt-12 text-left">
+      <h2 class="text-2xl font-semibold text-zinc-100 mb-3">What I work on</h2>
+      <p class="text-zinc-400 mb-4">
+        My expertise lies in building robust backend solutions that power seamless experiences.
+      </p>
+      <ul class="list-disc list-inside text-zinc-300 space-y-1">
+        <li>Designing and implementing scalable APIs</li>
+        <li>Data modeling and database architecture</li>
+        <li>Developing developer-friendly tooling</li>
+        <li>Optimizing system performance</li>
+        <li>Ensuring maintainable and clean codebases</li>
+      </ul>
+    </section>
+
+    <section class="mt-12 text-left">
+      <h2 class="text-2xl font-semibold text-zinc-100 mb-3">Selected work</h2>
+      <p class="text-zinc-400 mb-6">
+        A preview of some projects where I’ve solved complex backend challenges.
+      </p>
+      <div class="space-y-6 text-zinc-300">
+        <div>
+          <p class="font-bold text-zinc-100">API Gateway Optimization</p>
+          <p>Streamlined request routing to reduce latency and improve throughput for high-traffic services.</p>
+        </div>
+        <div>
+          <p class="font-bold text-zinc-100">Data Synchronization System</p>
+          <p>Built a reliable system ensuring consistent data replication across distributed databases.</p>
+        </div>
+        <div>
+          <p class="font-bold text-zinc-100">Custom Developer Tooling</p>
+          <p>Created internal tools to automate deployment workflows and enhance developer productivity.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-10 flex justify-center gap-4">
+      <a
+        href="/projects"
+        class="rounded-lg bg-indigo-500 px-6 py-3 text-sm font-medium text-white hover:bg-indigo-400 transition"
+      >
+        View Projects
+      </a>
+
+      <a
+        href="/about"
+        class="rounded-lg border border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-300 hover:border-indigo-400 hover:text-indigo-400 transition"
+      >
+        About Me
+      </a>
+    </div>
+
+  </section>
+</BaseLayout>
