@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import profileImage from '../assets/profile.png';
-import { Image } from 'astro:assets';
 ---
 
 <BaseLayout title="Jacob Monck">
@@ -19,14 +18,13 @@ import { Image } from 'astro:assets';
           [mask-image:radial-gradient(circle,black_60%,transparent_100%)]
         "
       >
-        <Image
-          src={profileImage}
-          alt="Photo of Jacob Monck"
-          class="h-full w-full object-cover grayscale transition duration-300 hover:grayscale-0"
-          loading="eager"
-          width={144}
-          height={144}
-        />
+      <img
+        src={profileImage.src}
+        alt="Photo of Jacob Monck"
+        width="144"
+        height="144"
+        class="h-full w-full object-cover grayscale transition duration-300 hover:grayscale-0"
+      />
       </div>
     </div>
 
