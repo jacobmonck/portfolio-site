@@ -1,33 +1,29 @@
-<header class="fixed top-0 inset-x-0 z-50 bg-zinc-950/70 backdrop-blur border-b border-zinc-800">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800 bg-zinc-950/70 backdrop-blur"
+>
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a
+      href="/"
+      class="text-lg font-semibold tracking-tight transition hover:text-indigo-400"
+    >
+      Jacob Monck
+    </a>
+
+    <div class="flex items-center gap-6 text-sm">
       <a
-        href="/"
-        class="font-semibold text-lg tracking-tight hover:text-indigo-400 transition"
+        href="/projects"
+        class="text-zinc-300 transition hover:text-indigo-400"
       >
-        Jacob Monck
+        Projects
       </a>
-  
-      <div class="flex items-center gap-6 text-sm">
-        <a
-          href="/projects"
-          class="text-zinc-300 hover:text-indigo-400 transition"
-        >
-          Projects
-        </a>
-  
-        <a
-          href="/about"
-          class="text-zinc-300 hover:text-indigo-400 transition"
-        >
-          About
-        </a>
-  
-        <a
-          href="/blog"
-          class="text-zinc-400 hover:text-indigo-400 transition"
-        >
-          Blog
-        </a>
-      </div>
-    </nav>
-  </header>
+
+      <a href="/about" class="text-zinc-300 transition hover:text-indigo-400">
+        About
+      </a>
+
+      <a href="/blog" class="text-zinc-400 transition hover:text-indigo-400">
+        Blog
+      </a>
+    </div>
+  </nav>
+</header>

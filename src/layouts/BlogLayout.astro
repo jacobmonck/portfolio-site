@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 const { title, description } = Astro.props;
 ---
@@ -12,33 +12,23 @@ const { title, description } = Astro.props;
     {description && <meta name="description" content={description} />}
   </head>
 
-  <body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
-    <header class="fixed top-0 inset-x-0 z-40 bg-zinc-950/70 backdrop-blur border-b border-zinc-800">
-      <div class="max-w-6xl mx-auto px-6 py-4">
+  <body class="bg-zinc-950 font-sans text-zinc-100 antialiased">
+    <header
+      class="fixed inset-x-0 top-0 z-40 border-b border-zinc-800 bg-zinc-950/70 backdrop-blur"
+    >
+      <div class="mx-auto max-w-6xl px-6 py-4">
         <a
           href="/"
-          class="text-sm text-zinc-400 hover:text-indigo-400 transition"
+          class="text-sm text-zinc-400 transition hover:text-indigo-400"
         >
           ← Back to portfolio
         </a>
       </div>
     </header>
 
-    <main class="page-fade-in max-w-3xl mx-auto px-6 pt-36 pb-24">
+    <main class="page-fade-in mx-auto max-w-3xl px-6 pt-36 pb-24">
       <article
-        class="
-          prose prose-invert prose-zinc prose-lg
-          prose-headings:tracking-tight
-          prose-headings:text-zinc-100
-          prose-p:text-zinc-300
-          prose-a:text-indigo-400
-          prose-a:no-underline hover:prose-a:underline
-          prose-code:text-indigo-300
-          prose-code:bg-zinc-900
-          prose-code:px-1 prose-code:rounded
-          prose-pre:bg-zinc-900
-          prose-pre:border prose-pre:border-zinc-800
-        "
+        class="prose prose-invert prose-zinc prose-lg prose-headings:tracking-tight prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-indigo-400 prose-a:no-underline hover:prose-a:underline prose-code:text-indigo-300 prose-code:bg-zinc-900 prose-code:px-1 prose-code:rounded prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800"
       >
         <slot />
       </article>
